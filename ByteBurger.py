@@ -21,7 +21,6 @@ while True:
     else:
        print(f"Bem vindo ao ByteBurguer\n Pedido em contrução...\n: ")
     while True:
-#Aqui eu fiquei em duvida, se ele digitar "0" sai do programa, mas ao mesmo tempo no enumerate o primeiro indíce repreta o número "0".
         resposta = (input("Digite o numero que repreta o produto do cliente\n (DIGITE 0 PARA SAIR): "))
         if resposta == "0":
             break

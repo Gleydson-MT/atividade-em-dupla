@@ -33,7 +33,7 @@ while True:
             preco_cliente_atual.append(precos[indice])
             todos_itens_vendidos.append(precos[indice])
             print(f"{itens[indice]} adicionado ao pedido!")
-#Bônus - Remover intem
+#Aqui será adicionado o primeiro bônus: Remover intem !
 
 if len(pedido_atual) >0:
     remover = input("\nDeseja remover algum intem? (s/n): ")
@@ -46,4 +46,33 @@ if len(pedido_atual) >0:
         pedido_atual.pop(posicao -1)
         preco_cliente_atual(posicao -1)
 
-        print("Itrm removido com sucesso!")
+        print("Item removido com sucesso!")
+
+# Resumo do pedido
+print(f"\n===== PEDIDO DO {cliente.upper()}=====")
+
+for i, iten in enumerate(pedido_atual):
+    print (f"{i+1} - {iten} ...... R$:{preco_cliente_atual[i]:.2f}")
+
+total_pedido = sum(preco_cliente_atual)
+
+# Essa linha de codigo ficou para o segundo bônus: DESCONTO!
+
+if len(preco_cliente_atual) >= 4:
+    desconto = total_pedido * 0.10
+    total_final = total_pedido - desconto
+
+    print(f"\nSubtotal: R$ {total_pedido:.2f}")
+    print(f"Desconto de 10%: -R$ {desconto:.2f}")
+    print(f"TOTAL FINAL: R$ {total_final:.2f}")
+
+    total_pedido = total_final
+else:
+    print(f"TOTAL: R$ {total_pedido:.2f}")
+
+# FECHAMENTO
+clientes.append(cliente)
+faturamento_dia += total_pedido
+
+print(f"Pedido finalizado com sucesso!")
+

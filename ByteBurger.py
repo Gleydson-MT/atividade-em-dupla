@@ -13,9 +13,8 @@ print()
 #Aqui a ideia é armazenar o pedido do cliente dentro dessa repetição.
 
 while True:
-    print(f"Digite (fim), para encerrar o atendimento.")
     cliente = (input("Digite o nome do cliente: "))
-    
+    print(f"Digite (fim), para encerrar o atendimento.")
     if cliente == "fim":
         break
     else:
@@ -76,3 +75,12 @@ faturamento_dia += total_pedido
 
 print(f"Pedido finalizado com sucesso!")
 
+print(f"=====================================")
+print(f"RELATÓRIO FINAL")
+print(f"=====================================")
+
+print(f"Total de clientes atendidos: {len(clientes)}")
+print(f"Clientes atendidos: ")
+
+for nome in clientes:
+    print(f"- {nome}")
